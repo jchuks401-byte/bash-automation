@@ -1,4 +1,33 @@
-#!/bin/bash
+  #!/bin/bash
+  
+say_hello() {
+ echo " what is your name? "
+read name 
+ echo " Hello $name! "
+ }
+
+check_age() {
+echo " How old are you? "
+r  ead age 
+if [ $age -ge 18 ]
+then 
+echo " You are an adult "
+else 
+echo " You are underaged "
+fi 
+}
+
+check_date() {
+ date 
+}
+ 
+get_numbers() {
+echo " Enter first number "
+read num1 
+echo " Enter second numner "
+read num2 
+}
+
 while true 
 do
 
@@ -13,25 +42,15 @@ read number
 
 if [ $number -eq 1 ]
 then
-    echo "What is your name?"
-    read name
-    echo "Hello $name"
+    say_hello
 
 elif [ $number -eq 2 ]
 then
-    echo "How old are you?"
-    read age
-
-    if [ $age -ge 18 ]
-    then
-        echo "You are an adult"
-    else
-        echo "You are underaged"
-    fi
+    check_age 
 
 elif [ $number -eq 3 ]
 then
-    date
+    check_date 
 
 elif [ $number -eq 4 ]
 then
@@ -57,7 +76,7 @@ echo "Enter second number"
 read num2
 result=$((num1 - num2))
 echo "Result: $result"
-
+ 
 elif [ $choice -eq  3 ]
 then 
 echo "Enter first  number"

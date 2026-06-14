@@ -64,20 +64,3 @@ John Agbasiere
 Information Technology Student
 
 Interested in IT Support, System Administration, and Cybersecurity.
-## Projects 
-### menu.sh
-Interactive Bash menu system  featuring:
--Greeting system 
--Age checker 
--Date dispaly 
--Loop-based menu navigation 
--Exit handling 
-
-### backup.sh
-BAsic backup automation script that:
--Accepts folfer names 
--Creates backup folders automatically 
--Demonstrate automation fundamentals 
-
-## Author 
-JOHN AGBASIERE 
