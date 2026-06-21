@@ -8,7 +8,7 @@ read name
 
 check_age() {
 echo " How old are you? "
-r  ead age 
+ read age 
 if [ $age -ge 18 ]
 then 
 echo " You are an adult "
@@ -27,16 +27,65 @@ read num1
 echo " Enter second numner "
 read num2 
 }
+ calculator() {
+echo "1. Add "
+echo "2. Subtract"
+echo "3. Multiply"
+echo "4. Divide"
+
+read choice 
+if [ $choice -eq 1 ]
+then 
+    get_numbers
+result=$((num1 + num2))
+echo " Result: $result"
+
+elif [ $choice -eq 2 ]
+then 
+     get_numbers 
+result=$((num1 - num2))
+echo "Result: $result"
+ 
+elif [ $choice -eq  3 ]
+then 
+     get_numbers 
+result=$((num1 * num2))
+echo "Results: $result"
+
+elif [ $choice -eq 4 ]
+then 
+     get_numbers 
+result=$((num1 / num2))
+echo $result
+echo "Result: $result "
+else
+echo "Invalid calculator option"
+fi
+echo " Press enter to continue "
+read  
+}
+
+check_even_odd() {
+echo "Enter a number"
+read num 
+if [ $((num % 2)) -eq 0 ]
+then 
+echo "Even "
+else 
+echo "Odd"
+fi
+}
 
 while true 
-do
+ do
 
 echo "Pick a number:"
 echo "1. Say Hello"
 echo "2. Check Age"
 echo "3. Show Date"
 echo "4. Calculator"
-echo "5. Exit"
+echo "5. Even or Odd"
+echo "6. Exit"
 
 read number
 
@@ -54,54 +103,13 @@ then
 
 elif [ $number -eq 4 ]
 then
-echo "1. Add "
-echo "2. Subtract"
-echo "3. Multiply"
-echo "4. Divide"
-read choice 
-if [ $choice -eq 1 ]
-then 
-    echo " Enter first number: "
-read num1
-echo " Enter second number: "
-read num2 
-result=$((num1 + num2))
-echo " Result: $result"
+calculator 
 
-elif [ $choice -eq 2 ]
+elif [ $number -eq 5 ]
 then 
-echo "Enter first number"
-read num1
-echo "Enter second number"
-read num2
-result=$((num1 - num2))
-echo "Result: $result"
- 
-elif [ $choice -eq  3 ]
-then 
-echo "Enter first  number"
-read num1 
-echo "Enter second  number"
-read num2
-result=$((num1 * num2))
-echo "Results: $result"
+check_even_odd 
 
-elif [ $choice -eq 4 ]
-then 
-echo "Enter first  number"
-read num1 
-echo "Enter second number"
-read num2 
-result=$((num1 / num2))
-echo $result
-echo "Result: $result "
-else
-echo "Invalid calculator option"
-fi
-echo " Press enter to continue "
-read 
-
-elif [ $number -eq 5 ] 
+elif [ $number -eq 6 ] 
 then 
 echo " Goodbye "
 break 
@@ -110,5 +118,5 @@ else
     echo "Invalid option"
 fi
 done 
-
+ 
 
