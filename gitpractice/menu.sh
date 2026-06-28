@@ -1,11 +1,13 @@
-  #!/bin/bash
-  
+ #!/bin/bash
+
+#Say Hello Function  
 say_hello() {
  echo " what is your name? "
 read name 
  echo " Hello $name! "
  }
 
+#Check age Function
 check_age() {
 echo " How old are you? "
  read age 
@@ -17,10 +19,12 @@ echo " You are underaged "
 fi 
 }
 
+#Check Date Function 
 check_date() {
  date 
 }
- 
+
+#Calculator Function 
 get_numbers() {
 echo " Enter first number "
 read num1 
@@ -62,9 +66,12 @@ else
 echo "Invalid calculator option"
 fi
 echo " Press enter to continue "
+
+
 read  
 }
 
+#Even/Odd FUnction
 check_even_odd() {
 echo "Enter a number"
 read num 
@@ -76,6 +83,26 @@ echo "Odd"
 fi
 }
 
+#Guess Number Function
+guess_number() {
+   secret=7
+   attempts=0
+while true 
+do 
+echo "guess a number "
+read guess
+attempts=$((attempts + 1))
+if [ $guess -eq $secret ]
+then
+echo "Correct!"
+echo "You got it in $attempts attempts"
+break 
+else 
+echo "Wrong! Try again "
+fi
+done
+}
+
 while true 
  do
 
@@ -85,7 +112,8 @@ echo "2. Check Age"
 echo "3. Show Date"
 echo "4. Calculator"
 echo "5. Even or Odd"
-echo "6. Exit"
+echo "6. Guess the number"
+echo "7. Exit"
 
 read number
 
@@ -109,7 +137,11 @@ elif [ $number -eq 5 ]
 then 
 check_even_odd 
 
-elif [ $number -eq 6 ] 
+elif  [ $number -eq 6 ]
+then 
+guess_number 
+
+elif [ $number -eq 7 ] 
 then 
 echo " Goodbye "
 break 
