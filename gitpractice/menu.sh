@@ -1,3 +1,4 @@
+
  #!/bin/bash
 
 #Say Hello Function  
@@ -85,7 +86,9 @@ fi
 
 #Guess Number Function
 guess_number() {
-   secret=7
+ while true 
+ do
+   secret=$((RANDOM % 10 + 1))
    attempts=0
 while true 
 do 
@@ -97,11 +100,32 @@ then
 echo "Correct!"
 echo "You got it in $attempts attempts"
 break 
+elif [ $guess -gt $secret ]
+then 
+echo "Too high! Try again "
 else 
-echo "Wrong! Try again "
+echo "Too low! Try again "
+fi
+
+if [ $attempts -eq 5 ]
+then 
+echo " Game over!"
+echo "The secret number is $secret "
+break
 fi
 done
+
+echo "Playy again? (y/n)"
+read choice 
+if [ "$choice" = "y" ]
+then 
+   continue 
+else 
+   break
+fi 
+done 
 }
+
 
 while true 
  do
