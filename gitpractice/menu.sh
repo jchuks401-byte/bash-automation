@@ -94,6 +94,12 @@ while true
 do 
 echo "guess a number "
 read guess
+if ! [[ $guess =~ ^[0-9]+$ ]]
+then 
+    echo "Please enter numbers only."
+  continue 
+fi 
+
 attempts=$((attempts + 1))
 if [ $guess -eq $secret ]
 then
@@ -140,6 +146,11 @@ echo "6. Guess the number"
 echo "7. Exit"
 
 read number
+if ! [[ $number =~ ^[0-9]+$ ]]
+ then 
+   echo " Please enter numbers only."
+continue 
+  fi
 
 if [ $number -eq 1 ]
 then
