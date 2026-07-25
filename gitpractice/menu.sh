@@ -114,7 +114,7 @@ echo "Too low! Try again "
 fi
 
 if [ $attempts -eq 5 ]
-then 
+  then 
 echo " Game over!"
 echo "The secret number is $secret "
 break
@@ -152,38 +152,35 @@ if ! [[ $number =~ ^[0-9]+$ ]]
 continue 
   fi
 
-if [ $number -eq 1 ]
-then
-    say_hello
+case $number in
+1)
+   say_hello
+   ;;
+2)
+   check_age 
+   ;;
+3)
+  check_date 
+  ;;
+4) 
+  calculator 
+  ;;
+5)
+  check_even_odd
+  ;;
+6) 
+  guess_number 
+  ;; 
 
-elif [ $number -eq 2 ]
-then
-    check_age 
-
-elif [ $number -eq 3 ]
-then
-    check_date 
-
-elif [ $number -eq 4 ]
-then
-calculator 
-
-elif [ $number -eq 5 ]
-then 
-check_even_odd 
-
-elif  [ $number -eq 6 ]
-then 
-guess_number 
-
-elif [ $number -eq 7 ] 
-then 
-echo " Goodbye "
-break 
-
-else 
-    echo "Invalid option"
-fi
+7) 
+  echo "Goodbye"
+break
+  ;;
+*)
+echo "Invalid option. Please enter a valid number between 1 and 7."
+  ;;
+esac
 done 
  
+
 
