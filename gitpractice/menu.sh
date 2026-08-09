@@ -84,6 +84,17 @@ echo "Odd"
 fi
 }
 
+# check_countries  function
+show_countries() {
+  countries=("canada" "Nigeria" "USA" "UK")
+
+  for country in  "${countries[@]}"
+  do
+echo "$country"
+  done
+}
+
+
 #Guess Number Function
 guess_number() {
  while true 
@@ -143,7 +154,8 @@ echo "3. Show Date"
 echo "4. Calculator"
 echo "5. Even or Odd"
 echo "6. Guess the number"
-echo "7. Exit"
+echo "7. show countries"
+echo "8. exit"
 
 read number
 if ! [[ $number =~ ^[0-9]+$ ]]
@@ -172,7 +184,11 @@ case $number in
   guess_number 
   ;; 
 
-7) 
+7)
+  show_countries 
+  ;;
+
+8) 
   echo "Goodbye"
 break
   ;;
